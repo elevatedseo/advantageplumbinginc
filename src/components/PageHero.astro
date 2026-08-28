@@ -1,0 +1,6 @@
+---
+interface Props { eyebrow?: string; title: string; intro?: string }
+const { eyebrow = 'Advantage Plumbing', title, intro } = Astro.props;
+---
+<section class="page-hero"><div class="container"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1>{intro && <p class="intro">{intro}</p>}</div></section>
+<style>.page-hero{padding:6.5rem 0;background:linear-gradient(120deg,rgba(7,37,59,.98),rgba(9,73,105,.88));color:#fff}.page-hero h1{max-width:800px;color:#fff;margin:.25rem 0}.page-hero .intro{max-width:720px;font-size:1.15rem;color:#d9e7ed}</style>

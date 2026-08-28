@@ -6,4 +6,8 @@ export default defineConfig({
   site: 'https://advantageplumbinginc.com',
   output: 'static',
   trailingSlash: 'always',
+  redirects: {
+    '/contact': '/contact-us/',
+    '/schedule-a-service': '/contact-us/',
+  },
 });

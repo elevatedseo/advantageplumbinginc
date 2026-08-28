@@ -1,0 +1,5 @@
+---
+import { testimonials } from '../data/site';
+---
+<section class="section testimonials"><div class="container"><p class="eyebrow">What our customers say</p><h2>Testimonials</h2><div class="quotes">{testimonials.map(item => <figure><blockquote>“{item.quote}”</blockquote><figcaption>— {item.author}</figcaption></figure>)}</div></div></section>
+<style>.testimonials{background:var(--pale)}.testimonials h2{text-align:center}.testimonials>.container>.eyebrow{text-align:center}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.quotes figure{margin:0;padding:2rem;background:#fff;box-shadow:var(--shadow)}blockquote{margin:0;color:#425a6a;line-height:1.75}figcaption{margin-top:1.25rem;font-weight:800;color:var(--orange)}@media(max-width:800px){.quotes{grid-template-columns:1fr}}</style>

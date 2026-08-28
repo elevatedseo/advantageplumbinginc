@@ -1,0 +1,2 @@
+const routes = ['', 'about-us/', 'services/', 'plumbing/', 'water-heaters/', 'water-treatment-systems/', 'contact-us/'];
+export const GET = () => new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(route => `\n  <url><loc>https://advantageplumbinginc.com/${route}</loc></url>`).join('')}\n</urlset>`, { headers: { 'Content-Type': 'application/xml' } });

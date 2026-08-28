@@ -1,0 +1,12 @@
+---
+interface Props { inverse?: boolean }
+const { inverse = false } = Astro.props;
+---
+<span class:list={['logo', { inverse }]} aria-label="Advantage Plumbing">
+  <span class="mark" aria-hidden="true"><span class="drop">◆</span><span class="wrench">●</span></span>
+  <span><strong>Advantage</strong><small>Plumbing</small></span>
+</span>
+
+<style>
+  .logo{display:inline-flex;align-items:center;gap:.65rem;color:var(--navy);font-family:var(--display);line-height:.8;text-transform:uppercase}.logo.inverse{color:#fff}.mark{position:relative;width:45px;height:52px;display:grid;place-items:center;color:var(--blue)}.drop{font-size:2.6rem;transform:rotate(45deg);color:var(--blue)}.wrench{position:absolute;color:var(--orange);font-size:.8rem}.logo strong{display:block;font-size:1.5rem;letter-spacing:.02em}.logo small{display:block;margin-top:.45rem;color:var(--orange);font-size:.78rem;font-weight:800;letter-spacing:.32em}
+</style>

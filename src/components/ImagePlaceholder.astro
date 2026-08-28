@@ -1,0 +1,6 @@
+---
+interface Props { label: string; class?: string }
+const { label, class: className } = Astro.props;
+---
+<div class:list={['image-placeholder', className]} role="img" aria-label={`${label} — approved image pending`}><span aria-hidden="true">◆</span><small>Approved image pending</small><strong>{label}</strong></div>
+<style>.image-placeholder{min-height:260px;display:grid;place-content:center;text-align:center;background:linear-gradient(135deg,#dbe9ee,#bcd0d9);color:var(--navy);overflow:hidden}.image-placeholder span{font-size:3rem;color:var(--blue);transform:rotate(45deg)}.image-placeholder small{margin-top:1rem;text-transform:uppercase;letter-spacing:.12em}.image-placeholder strong{margin-top:.25rem}</style>

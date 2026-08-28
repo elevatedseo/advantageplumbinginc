@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+<BaseLayout title="About Us" description="Learn about Advantage Plumbing, a small family-owned plumbing business serving Omaha, Council Bluffs and surrounding areas.">
+  <PageHero title="Who Lays The Pipe" intro="Your In-Home Plumbing Specialist" />
+  <section class="section"><div class="container split"><div><p class="eyebrow">About Advantage Plumbing</p><h2>Who Lays The Pipe</h2><p>We know there are a lot of plumbing companies to choose from. However, Advantage Plumbing’s philosophy is to keep our overhead costs down and pass the savings on to you. In these tough economic times, we understand that price does matter and quality does count.</p><p>As a full-service plumbing contractor, Advantage Plumbing is able to provide customers in the Omaha, Council Bluffs and surrounding areas the highest quality repairs and service. While our focus is mainly on residential service and remodels for your kitchen and bath, we also provide new construction and light commercial services.</p><a class="button" href="/contact-us/">Schedule A Service</a></div><ImagePlaceholder label="Advantage Plumbing team" /></div></section>
+  <section class="section band"><div class="container split"><ImagePlaceholder label="Mike Luty, Master Plumber and Owner" /><div><p class="eyebrow">Experience you can trust</p><h2>Your In-Home Plumbing Specialist</h2><p>Over 20 years experience in and around the Plumbing trade. Master plumber\owner. Experience in new home construction, Home remodeling, Service plumbing, light commercial construction, light commercial remodeling and commercial service experience. Two years experience teaching first year plumbing class. I am hard-working dedicated dependable and friendly. We are a small family owned business.</p><p>At Advantage Plumbing we just try and provide the best customer service possible. In order to do that we need to be open honest and efficient with every customer. We will keep you informed and clean as we go. I know nobody calls the plumber to just say hello, so when we do arrive, I want it to be a good experience and let you know you are in good hands. I know we cannot do every service call but we should be the best at every service call we do</p></div></div></section>
+  <Testimonials />
+</BaseLayout>

@@ -20,5 +20,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Read-only migration research; never deploy compromised source HTML
+reference-html/
+
 # jetbrains setting folder
 .idea/

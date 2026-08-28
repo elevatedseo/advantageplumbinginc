@@ -1,0 +1,27 @@
+---
+import Logo from './Logo.astro';
+import { navigation, site } from '../data/site';
+const current = Astro.url.pathname;
+const isActive = (href: string) => href === '/' ? current === '/' : current.startsWith(href);
+---
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="utility"><div class="container"><span>Serving {site.serviceArea}</span><a href={site.phoneHref}>Call: {site.phoneDisplay}</a></div></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Advantage Plumbing home"><Logo /></a>
+    <nav aria-label="Primary navigation">
+      <ul>
+        {navigation.map((item) => <li class={item.children ? 'has-submenu' : ''}>
+          <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+          {item.children && <ul class="submenu">{item.children.map(child => <li><a href={child.href} aria-current={isActive(child.href) ? 'page' : undefined}>{child.label}</a></li>)}</ul>}
+        </li>)}
+      </ul>
+    </nav>
+    <details class="mobile-nav"><summary aria-label="Open menu"><span></span><span></span><span></span></summary><ul>{navigation.map(item => <li><a href={item.href}>{item.label}</a>{item.children && <ul>{item.children.map(child => <li><a href={child.href}>{child.label}</a></li>)}</ul>}</li>)}</ul></details>
+  </div>
+</header>
+
+<style>
+  .utility{background:var(--navy);color:#fff;font-size:.82rem}.utility .container{min-height:36px;display:flex;justify-content:space-between;align-items:center;gap:1rem}.utility a{color:#fff;font-weight:800}.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.98);box-shadow:0 3px 16px rgba(9,34,54,.12)}.header-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:2rem}.brand{text-decoration:none}nav>ul{display:flex;align-items:center;gap:.2rem;list-style:none;margin:0;padding:0}nav li{position:relative}nav a{display:block;padding:2.1rem .9rem;color:var(--navy);font-size:.88rem;font-weight:800;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;border-bottom:3px solid transparent}nav a:hover,nav a[aria-current="page"]{color:var(--orange);border-color:var(--orange)}.submenu{position:absolute;top:100%;left:0;min-width:250px;list-style:none;margin:0;padding:.5rem;background:var(--navy);box-shadow:0 12px 30px rgba(0,0,0,.22);opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}.submenu a{padding:.85rem 1rem;color:#fff;border:0;text-transform:none}.submenu a:hover,.submenu a[aria-current="page"]{color:#fff;background:var(--orange)}.has-submenu:hover .submenu,.has-submenu:focus-within .submenu{opacity:1;visibility:visible;transform:none}.mobile-nav{display:none}.skip-link{position:fixed;top:-100px;left:1rem;z-index:100;background:#fff;padding:.75rem}.skip-link:focus{top:1rem}
+  @media(max-width:850px){.utility span{display:none}.utility .container{justify-content:center}.header-inner{min-height:76px}nav{display:none}.mobile-nav{display:block;position:relative}.mobile-nav summary{width:44px;height:44px;display:grid;align-content:center;gap:5px;cursor:pointer;list-style:none}.mobile-nav summary span{display:block;height:3px;background:var(--navy)}.mobile-nav>ul{position:absolute;right:0;top:55px;width:min(85vw,320px);padding:1rem;list-style:none;background:#fff;box-shadow:0 15px 35px rgba(0,0,0,.2)}.mobile-nav ul ul{padding-left:1rem}.mobile-nav li{list-style:none}.mobile-nav a{display:block;padding:.65rem;color:var(--navy);font-weight:800;text-decoration:none}}
+</style>
