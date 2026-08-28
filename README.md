@@ -1,43 +1,32 @@
-# Astro Starter Kit: Minimal
+# Advantage Plumbing Astro rebuild
 
-```sh
-npm create astro@latest -- --template minimal
+Clean static rebuild of `https://advantageplumbinginc.com/`.
+
+## Requirements
+
+- Node.js 22.12 or newer
+- npm
+
+## Local setup
+
+```powershell
+npm install
+npm run check
+npm run build
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Security boundary
 
-## 🚀 Project Structure
+The source WordPress installation shows signs of compromise. Do not import or execute WordPress PHP, plugins, themes, JavaScript, shortcodes, database exports, archives, SVG files, or unknown assets.
 
-Inside of your Astro project, you'll see the following folders and files:
+Only publicly verified business content and validated, re-encoded raster media may enter this repository. Unrelated casino, gambling, pharmaceutical, backlink, or other injected content must be excluded.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Migration approach
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Inventory legitimate public navigation, pages, SEO metadata, and content.
+2. Download raster media into a separate untrusted staging area.
+3. Validate file signatures and dimensions, scan, and re-encode approved images.
+4. Rebuild reusable layouts and components in clean Astro.
+5. Preserve verified URL paths and metadata.
+6. Run `npm run check` and `npm run build` before every deployment.
