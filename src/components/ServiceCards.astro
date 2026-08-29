@@ -1,5 +1,10 @@
 ---
 import { services } from '../data/site';
+import { Image } from 'astro:assets';
+import plumbing from '../assets/images/service-plumbing.webp';
+import heater from '../assets/images/service-water-heater.webp';
+import treatment from '../assets/images/service-water-treatment.webp';
+const images = [plumbing, heater, treatment];
 ---
-<div class="service-grid">{services.map(service => <article><div class="icon" aria-hidden="true">{service.icon === 'drop' ? '◆' : service.icon === 'heater' ? '▥' : '⌁'}</div><h3>{service.title}</h3><p>{service.summary}</p><a href={service.href}>See Full Services <span aria-hidden="true">→</span></a></article>)}</div>
-<style>.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.service-grid article{padding:2.2rem;background:#fff;border-top:4px solid var(--orange);box-shadow:var(--shadow);transition:.2s}.service-grid article:hover{transform:translateY(-5px)}.icon{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:var(--pale);color:var(--blue);font-size:2rem}.service-grid h3{font-size:1.35rem}.service-grid a{font-weight:800;color:var(--orange);text-transform:uppercase;font-size:.8rem;letter-spacing:.06em;text-decoration:none}@media(max-width:800px){.service-grid{grid-template-columns:1fr}}</style>
+<div class="service-grid">{services.map((service,index) => <article><Image src={images[index]} alt={`${service.title} service`} widths={[380,760]} sizes="(max-width: 800px) 100vw, 33vw" /><div class="card-content"><h3>{service.title}</h3><p>{service.summary}</p><a href={service.href}>See Full Services <span aria-hidden="true">→</span></a></div></article>)}</div>
+<style>.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.service-grid article{overflow:hidden;background:#fff;border-top:4px solid var(--orange);box-shadow:var(--shadow);transition:.2s}.service-grid article:hover{transform:translateY(-5px)}.service-grid :global(img){display:block;width:100%;height:210px;object-fit:cover}.card-content{padding:1.7rem 2rem 2rem}.service-grid h3{font-size:1.35rem}.service-grid a{font-weight:800;color:var(--orange);text-transform:uppercase;font-size:.8rem;letter-spacing:.06em;text-decoration:none}@media(max-width:800px){.service-grid{grid-template-columns:1fr}}</style>

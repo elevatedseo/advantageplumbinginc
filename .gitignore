@@ -22,6 +22,10 @@ pnpm-debug.log*
 
 # Read-only migration research; never deploy compromised source HTML
 reference-html/
+incoming-media/
+
+# Temporary local review composites
+*-review.jpg
 
 # jetbrains setting folder
 .idea/
