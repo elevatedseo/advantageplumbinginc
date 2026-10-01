@@ -1,0 +1,9 @@
+/* Shared footer credit: compact, keyboard accessible, and independent of site typography. */
+.elevated-security-credit.elevated-security-credit { display: flex; flex: 1 0 100%; grid-column: 1 / -1; justify-content: center; align-items: center; width: 100%; max-width: 100%; margin: 14px 0 0; padding: 8px 0; box-sizing: border-box; }
+footer:has(> .elevated-security-credit) { flex-wrap: wrap; }
+a.elevated-security-badge.elevated-security-badge { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: auto; max-width: 100%; min-height: 40px; margin: 0; padding: 9px 15px; box-sizing: border-box; border: 1px solid #537d72; border-radius: 999px; background: linear-gradient(135deg, #203d36, #101f1c); color: #f2fff9; box-shadow: 0 3px 12px #0002, inset 0 1px 0 #ffffff12; font: 600 11px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .015em; text-align: center; text-decoration: none; text-transform: none; white-space: nowrap; vertical-align: middle; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+a.elevated-security-badge.elevated-security-badge:hover { color: #fff; border-color: #9de8c5; box-shadow: 0 4px 18px #64d9aa30, inset 0 1px 0 #ffffff18; transform: translateY(-2px); text-decoration: none; }
+a.elevated-security-badge.elevated-security-badge:focus-visible { outline: 3px solid #69dbb0; outline-offset: 4px; }
+.elevated-security-badge .elevated-security-icon { display: block; flex: 0 0 17px; width: 17px; height: 17px; margin: 0; color: #9de8c5; }
+.elevated-security-badge .elevated-security-arrow { display: block; flex: 0 0 12px; width: 12px; height: 12px; margin: 0; color: #b9d5ca; }
+@media (prefers-reduced-motion: reduce) { a.elevated-security-badge.elevated-security-badge { transition: none; } a.elevated-security-badge.elevated-security-badge:hover { transform: none; } }

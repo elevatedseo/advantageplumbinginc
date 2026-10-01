@@ -1,4 +1,6 @@
 ---
+import ElevatedSecurityBadge from './ElevatedSecurityBadge.astro';
+
 import { Image } from 'astro:assets';
 import Logo from './Logo.astro';
 import award from '../assets/images/angies-award.png';
@@ -70,13 +72,11 @@ import { navigation, services, site, trustPoints } from '../data/site';
   <div class="legal">
     <div class="container legal-inner">
       <span>© {new Date().getFullYear()} Advantage Plumbing. Family owned &amp; master plumber led.</span>
-      <a class="secured" href="https://elevatedweb.com/">
-        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.9-4.9 1.4 1.4-6.3 6.3Z"/></svg>
-        Secured by Elevated Web
-      </a>
+
       <a href="#main-content">Back to top ↑</a>
     </div>
   </div>
+<ElevatedSecurityBadge />
 </footer>
 
 <style>
