@@ -4,7 +4,24 @@ export const site = {
   phoneDisplay: '(402) 614-2673',
   phoneHref: 'tel:+14026142673',
   serviceArea: 'Omaha, Bellevue, Council Bluffs, IA and surrounding areas',
+  hours: [
+    ['Monday–Friday', '8:00 AM–4:30 PM'],
+    ['Saturday–Sunday', 'Closed'],
+  ],
 };
+
+// Each point is backed by published site copy (About page, homepage and the Angie's List award).
+export const trustPoints = [
+  { title: 'Family owned', text: 'A small, local team that treats your home like our own.' },
+  { title: 'Master plumber led', text: 'Over 20 years in the trade, owner on the job.' },
+  { title: 'Same-day service', text: 'Available throughout the entire Omaha region.' },
+  { title: 'Clean as we go', text: 'We explain the work first and tidy up after.' },
+];
+
+export const brands = [
+  'Enviro Water Products', 'State Water Heaters', 'Watts WaterPEX', 'GROHE', 'American Standard', 'Bradford White',
+  'Navien', 'A. O. Smith', 'Kenmore', 'Rinnai', 'BrassCraft', 'Flexcon Industries',
+];
 
 export const navigation = [
   { label: 'Home', href: '/' },
@@ -35,9 +52,9 @@ export const services = [
     icon: 'heater',
   },
   {
-    title: 'Water Filtration Systems',
+    title: 'Water Treatment Systems',
     href: '/water-treatment-systems/',
-    summary: 'Advantage Plumbing field engineers are experts at treating and operating most types of water filtration systems',
+    summary: 'Advantage Plumbing field engineers are experts at treating and operating most types of water filtration systems.',
     icon: 'drop',
   },
 ];
