@@ -1,0 +1,29 @@
+---
+interface Props {
+  endpoint: string;
+  siteId: string;
+  formId: string;
+  siteKey: string;
+  successMessage?: string;
+  errorMessage?: string;
+}
+const {endpoint,siteId,formId,siteKey,successMessage='Thanks — your request has been received.',errorMessage='Unable to send your request. Please try again.'}=Astro.props;
+if (!endpoint || !siteId || !formId || !siteKey) throw new Error('Shared forms require endpoint, site ID, form ID, and Turnstile site key');
+const url=new URL(endpoint);
+if(url.protocol!=='https:' && !(url.protocol==='http:' && ['localhost','127.0.0.1'].includes(url.hostname))) throw new Error('Forms endpoint must use HTTPS');
+if(url.username || url.password || url.search || url.hash) throw new Error('Forms endpoint must not contain credentials, query parameters, or fragments');
+---
+<form class="form" data-elevated-form="shared" data-endpoint={`${endpoint.replace(/\/$/,'')}/v1/sites/${encodeURIComponent(siteId)}/forms/${encodeURIComponent(formId)}/submissions`} data-success={successMessage} data-error={errorMessage}>
+  <slot />
+  <label class="form-trap" aria-hidden="true">Company website<input name="companyWebsite" tabindex="-1" autocomplete="off" /></label>
+  <div data-turnstile data-sitekey={siteKey}></div>
+  <p class="form-note" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">Loading secure verification…</p>
+</form>
+<script>
+  import {initializeForms} from './client/submit';
+  const startForms=()=>initializeForms();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startForms, {once:true});
+  else startForms();
+  document.addEventListener('astro:page-load',initializeForms);
+</script>
+<style>.form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}</style>

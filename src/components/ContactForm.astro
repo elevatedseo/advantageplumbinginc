@@ -1,0 +1,78 @@
+---
+import LeadForm from '../forms-astro/LeadForm.astro';
+const services = ['Plumbing', 'Water Heaters', 'Water Treatment Systems', 'Other'];
+---
+<div id="contact-form" class="contact-card">
+  <LeadForm
+    endpoint="https://elevated-forms-production.icy-flower-c65e.workers.dev"
+    siteId="advantageplumbinginc"
+    formId="contact"
+    siteKey="0x4AAAAAAFrIUMpa0eN8FzqK"
+    successMessage="Thanks, we have received your request and will get back to you shortly."
+    errorMessage="Sorry, we could not send your request. Please call (402) 614-2673."
+  >
+    <p class="intro">Tell us what is going on with your plumbing. Name, email, and a short message are required.</p>
+    <div class="fields">
+      <div class="field">
+        <label for="contact-form-name">Name</label>
+        <input id="contact-form-name" name="name" type="text" autocomplete="name" maxlength="100" required />
+      </div>
+      <div class="field">
+        <label for="contact-form-email">Email</label>
+        <input id="contact-form-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+      </div>
+      <div class="field">
+        <label for="contact-form-phone">Phone (optional)</label>
+        <input id="contact-form-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" />
+      </div>
+      <div class="field">
+        <label for="contact-form-service">Service (optional)</label>
+        <select id="contact-form-service" name="service">
+          <option value="">Please choose</option>
+          {services.map(service => <option>{service}</option>)}
+        </select>
+      </div>
+      <div class="field message">
+        <label for="contact-form-message">How can we help?</label>
+        <textarea id="contact-form-message" name="message" rows="5" maxlength="2000" required></textarea>
+      </div>
+      <input type="hidden" name="goal" value="" />
+    </div>
+    <button type="submit" disabled>Send request</button>
+  </LeadForm>
+</div>
+<script>
+  // The shared client only sends name/email/company/industry/website/goal,
+  // so compose `goal` from the visible service/phone/message fields via a
+  // formdata listener (fires when the client constructs FormData, before it
+  // filters keys), with only non-empty lines.
+  const root = document.getElementById('contact-form');
+  const form = root?.querySelector('form[data-elevated-form]');
+  form?.addEventListener('formdata', (event: Event) => {
+    const fd = (event as FormDataEvent).formData;
+    const service = String(fd.get('service') || '').trim();
+    const phone = String(fd.get('phone') || '').trim();
+    const message = String(fd.get('message') || '').trim();
+    const lines: string[] = [];
+    if (service) lines.push(`Service: ${service}`);
+    if (phone) lines.push(`Phone: ${phone}`);
+    if (message) lines.push(`Message: ${message}`);
+    fd.set('goal', lines.join('\n'));
+  });
+</script>
+<style>
+  .contact-card{display:block;background:#fff;padding:clamp(20px,4vw,40px);border:1px solid #d8d3ca;border-top:6px solid var(--orange,#e07b39)}
+  .contact-card .intro{margin-top:0}
+  .contact-card .fields{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+  .contact-card .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .contact-card .field.message{grid-column:1/-1}
+  .contact-card label{font-weight:700;font-size:.95rem}
+  .contact-card input,.contact-card select,.contact-card textarea{box-sizing:border-box;width:100%;padding:12px;border:1px solid #8c8c86;border-radius:2px;background:#fff;color:#303438;font:inherit;min-height:48px}
+  .contact-card textarea{min-height:120px}
+  .contact-card input:focus-visible,.contact-card select:focus-visible,.contact-card textarea:focus-visible,.contact-card button:focus-visible{outline:3px solid var(--orange,#e07b39);outline-offset:3px}
+  .contact-card button{padding:14px 24px;background:var(--navy,#1d3a5f);border:0;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;min-height:48px;margin-top:20px}
+  .contact-card button:disabled{opacity:.6;cursor:not-allowed}
+  .contact-card .form-note{grid-column:1/-1;padding:16px;background:var(--pale,#f2ede6);overflow-wrap:anywhere}
+  .contact-card .form-note:empty{display:none}
+  @media(max-width:600px){.contact-card .fields{grid-template-columns:1fr}.contact-card button{width:100%}}
+</style>
