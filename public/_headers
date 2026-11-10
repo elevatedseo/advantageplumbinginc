@@ -1,8 +1,1 @@
-/*
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
-
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
+LyoKICBYLUNvbnRlbnQtVHlwZS1PcHRpb25zOiBub3NuaWZmCiAgUmVmZXJyZXItUG9saWN5OiBzdHJpY3Qtb3JpZ2luLXdoZW4tY3Jvc3Mtb3JpZ2luCiAgUGVybWlzc2lvbnMtUG9saWN5OiBjYW1lcmE9KCksIG1pY3JvcGhvbmU9KCksIGdlb2xvY2F0aW9uPSgpCiAgQ29udGVudC1TZWN1cml0eS1Qb2xpY3k6IGRlZmF1bHQtc3JjICdzZWxmJzsgaW1nLXNyYyAnc2VsZicgZGF0YTogaHR0cHM6Ly93d3cuZ29vZ2xlLWFuYWx5dGljcy5jb20gaHR0cHM6Ly9jaGFsbGVuZ2VzLmNsb3VkZmxhcmUuY29tOyBzdHlsZS1zcmMgJ3NlbGYnICd1bnNhZmUtaW5saW5lJzsgc2NyaXB0LXNyYyAnc2VsZicgJ3Vuc2FmZS1pbmxpbmUnIGh0dHBzOi8vd3d3Lmdvb2dsZXRhZ21hbmFnZXIuY29tIGh0dHBzOi8vY2hhbGxlbmdlcy5jbG91ZGZsYXJlLmNvbTsgY29ubmVjdC1zcmMgJ3NlbGYnIGh0dHBzOi8vd3d3Lmdvb2dsZS1hbmFseXRpY3MuY29tIGh0dHBzOi8vcmVnaW9uMS5nb29nbGUtYW5hbHl0aWNzLmNvbSBodHRwczovL2NoYWxsZW5nZXMuY2xvdWRmbGFyZS5jb20gaHR0cHM6Ly9lbGV2YXRlZC1mb3Jtcy1wcm9kdWN0aW9uLmljeS1mbG93ZXItYzY1ZS53b3JrZXJzLmRldjsgZnJhbWUtc3JjIGh0dHBzOi8vY2hhbGxlbmdlcy5jbG91ZGZsYXJlLmNvbTsgd29ya2VyLXNyYyAnc2VsZicgYmxvYjo7IG9iamVjdC1zcmMgJ25vbmUnOyBiYXNlLXVyaSAnc2VsZic7IGZyYW1lLWFuY2VzdG9ycyAnbm9uZSc7IGZvcm0tYWN0aW9uICdzZWxmJwoKL2Fzc2V0cy8qCiAgQ2FjaGUtQ29udHJvbDogcHVibGljLCBtYXgtYWdlPTMxNTM2MDAwLCBpbW11dGFibGUK
